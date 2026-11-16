@@ -1,0 +1,88 @@
+{
+  "view": {
+    "type": "view.list",
+    "items": [
+      {
+        "type": "view.text",
+        "content": "Выделите рамкой КАЖДУЮ взрослую бабочку — дневную, ночную, включая моль: крылья, тело, усики и лапки. Гусениц, куколок, других насекомых (ручейников, мух, пчёл, ос, стрекоз) и тени не выделяйте."
+      },
+      {
+        "type": "field.image-annotation",
+        "image": { "type": "data.input", "path": "image" },
+        "data": { "type": "data.output", "path": "result" },
+        "shapes": { "rectangle": true },
+        "ratio": [4, 3]
+      },
+      {
+        "type": "field.radio-group",
+        "label": "Что на фотографии?",
+        "data": { "type": "data.output", "path": "status" },
+        "options": [
+          { "label": "1 — Есть бабочки, я выделил(а) каждую", "value": "butterflies" },
+          { "label": "2 — Взрослых бабочек нет", "value": "no_butterflies" },
+          { "label": "3 — Изображение не загрузилось", "value": "load_error" }
+        ],
+        "validation": {
+          "type": "condition.all",
+          "conditions": [
+            { "type": "condition.required", "hint": "Выберите один из вариантов" },
+            {
+              "type": "condition.any",
+              "hint": "Ответ не совпадает с рамками: если выбрали «Есть бабочки» — нарисуйте хотя бы одну рамку; если бабочек нет или фото не загрузилось — удалите все рамки",
+              "conditions": [
+                {
+                  "type": "condition.all",
+                  "conditions": [
+                    { "type": "condition.equals", "data": { "type": "data.output", "path": "status" }, "to": "butterflies" },
+                    { "type": "condition.schema", "data": { "type": "data.output", "path": "result" }, "schema": { "type": "array", "minItems": 1 } }
+                  ]
+                },
+                {
+                  "type": "condition.all",
+                  "conditions": [
+                    { "type": "condition.not", "condition": { "type": "condition.equals", "data": { "type": "data.output", "path": "status" }, "to": "butterflies" } },
+                    {
+                      "type": "condition.any",
+                      "conditions": [
+                        { "type": "condition.empty", "data": { "type": "data.output", "path": "result" } },
+                        { "type": "condition.schema", "data": { "type": "data.output", "path": "result" }, "schema": { "type": "array", "maxItems": 0 } }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "type": "field.checkbox",
+        "label": "На фото есть объект, про который я не уверен(а), бабочка ли это",
+        "data": { "type": "data.output", "path": "unsure" }
+      },
+      {
+        "type": "field.textarea",
+        "label": "Комментарий (необязательно): что вызвало сомнение",
+        "data": { "type": "data.output", "path": "comment" }
+      }
+    ]
+  },
+  "plugins": [
+    {
+      "type": "plugin.field.image-annotation.hotkeys",
+      "modes": { "rectangle": "r", "select": "s" },
+      "confirm": "x",
+      "cancel": "c"
+    },
+    {
+      "type": "plugin.hotkeys",
+      "1": { "type": "action.set", "data": { "type": "data.output", "path": "status" }, "payload": "butterflies" },
+      "2": { "type": "action.set", "data": { "type": "data.output", "path": "status" }, "payload": "no_butterflies" },
+      "3": { "type": "action.set", "data": { "type": "data.output", "path": "status" }, "payload": "load_error" }
+    },
+    {
+      "type": "plugin.toloka",
+      "layout": { "kind": "scroll", "taskWidth": 900 }
+    }
+  ]
+}

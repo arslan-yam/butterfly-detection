@@ -1,0 +1,10 @@
+photo_id,image,status,boxes,key,case
+280833516,https://inaturalist-open-data.s3.amazonaws.com/photos/280833516/original.jpeg,butterflies,"[{""left"": 0.162, ""top"": 0.196, ""width"": 0.745, ""height"": 0.66}]",bfly42,1. одна бабочка
+9022045,https://inaturalist-open-data.s3.amazonaws.com/photos/9022045/original.jpeg,butterflies,"[{""left"": 0.097, ""top"": 0.19, ""width"": 0.33, ""height"": 0.702}, {""left"": 0.503, ""top"": 0.16, ""width"": 0.43, ""height"": 0.65}]",bfly30,2. несколько бабочек
+760750840,https://inaturalist-open-data.s3.amazonaws.com/photos/760750840/original.jpg,butterflies,"[{""left"": 0.262, ""top"": 0.163, ""width"": 0.515, ""height"": 0.46}, {""left"": 0.295, ""top"": 0.486, ""width"": 0.487, ""height"": 0.507}]",mating0,3. перекрытие
+110570995,https://inaturalist-open-data.s3.amazonaws.com/photos/110570995/original.jpg,butterflies,"[{""left"": 0.072, ""top"": 0.221, ""width"": 0.474, ""height"": 0.642}]",bfly19,4. частично закрыта цветком
+40176153,https://inaturalist-open-data.s3.amazonaws.com/photos/40176153/original.jpg,butterflies,"[{""left"": 0.254, ""top"": 0.16, ""width"": 0.548, ""height"": 0.457}]",moth22,5. ночная бабочка
+411740510,https://inaturalist-open-data.s3.amazonaws.com/photos/411740510/original.jpg,butterflies,"[{""left"": 0.065, ""top"": 0.332, ""width"": 0.827, ""height"": 0.374}]",moth12,6. моль
+760333297,https://inaturalist-open-data.s3.amazonaws.com/photos/760333297/original.jpg,no_butterflies,[],caddis7,7. ручейник — не выделяем
+170626058,https://inaturalist-open-data.s3.amazonaws.com/photos/170626058/original.jpg,no_butterflies,[],larva9,8. гусеница — не выделяем
+518903248,https://inaturalist-open-data.s3.amazonaws.com/photos/518903248/original.jpg,no_butterflies,[],flower13,9. нет бабочек

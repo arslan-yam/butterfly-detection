@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Эталон рамок</title>
+<style>
+  body { font: 14px system-ui, sans-serif; margin: 16px; background: #fafafa; color: #222; }
+  #wrap { position: relative; display: inline-block; user-select: none; }
+  #img { max-width: 1000px; max-height: 75vh; display: block; }
+  #cv { position: absolute; left: 0; top: 0; cursor: crosshair; }
+  textarea { width: 100%; height: 90px; font: 12px monospace; }
+  button { margin: 2px; }
+  .row { margin: 8px 0; }
+</style>
+</head>
+<body>
+<h3>Локальная разметка эталона (экзамен, примеры для инструкции)</h3>
+<div class="row">
+  Вставьте строки <code>photo_id,image</code> (можно прямо из candidates.csv — лишние колонки игнорируются, первая строка-заголовок пропускается):
+  <textarea id="src"></textarea>
+  <button id="load">Загрузить список</button>
+</div>
+<div class="row">
+  <button id="prev">← Пред.</button> <span id="pos"></span> <button id="next">След. →</button>
+  &nbsp; Статус:
+  <label><input type="radio" name="st" value="butterflies"> есть бабочки</label>
+  <label><input type="radio" name="st" value="no_butterflies"> нет</label>
+  <label><input type="radio" name="st" value="skip"> не брать в экзамен</label>
+  &nbsp; <button id="undo">Удалить последнюю рамку (Backspace)</button>
+</div>
+<div id="wrap"><img id="img"><canvas id="cv"></canvas></div>
+<div class="row">Тяните мышью, чтобы нарисовать рамку. Клик по рамке с Alt — удалить её.</div>
+<div class="row"><button id="export">Скачать exam_reference.csv</button> <span id="info"></span></div>
+<script>
+const S = { items: [], i: 0 };
+const img = document.getElementById('img'), cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+function cur() { return S.items[S.i]; }
+function parse(text) {
+  const out = [];
+  for (const line of text.trim().split(/\n/)) {
+    const m = line.match(/^(\d+),(https:\/\/[^,]+),(\w+),"((?:[^"]|"")*)"/);
+    if (m) { out.push({ photo_id: m[1], image: m[2], status: m[3], boxes: JSON.parse(m[4].replace(/""/g, '"')) }); continue; }
+    if (/^(\d+),(https:\/\/[^,]+),(\w+),\[\]/.test(line)) { const p = line.split(','); out.push({ photo_id: p[0], image: p[1], status: p[2], boxes: [] }); continue; }
+    const parts = line.split(/[,\t]/);
+    const id = parts.find(p => /^\d+$/.test(p.trim()));
+    const url = parts.find(p => p.trim().startsWith('https://'));
+    if (id && url) out.push({ photo_id: id.trim(), image: url.trim(), status: '', boxes: [] });
+  }
+  return out;
+}
+function show() {
+  const it = cur(); if (!it) return;
+  img.src = it.image;
+  document.getElementById('pos').textContent = `${S.i + 1} / ${S.items.length}  (id ${it.photo_id})`;
+  document.querySelectorAll('input[name=st]').forEach(r => r.checked = r.value === it.status);
+}
+img.onload = () => { cv.width = img.clientWidth; cv.height = img.clientHeight; draw(); };
+function draw(tmp) {
+  ctx.clearRect(0, 0, cv.width, cv.height);
+  ctx.lineWidth = 2;
+  for (const b of cur().boxes.concat(tmp ? [tmp] : [])) {
+    ctx.strokeStyle = b === tmp ? '#06f' : '#f20';
+    ctx.strokeRect(b.left * cv.width, b.top * cv.height, b.width * cv.width, b.height * cv.height);
+  }
+  const n = S.items.filter(x => x.status).length;
+  document.getElementById('info').textContent = `размечено ${n} из ${S.items.length}`;
+}
+let start = null;
+function pt(e) { const r = cv.getBoundingClientRect(); return { x: (e.clientX - r.left) / r.width, y: (e.clientY - r.top) / r.height }; }
+function box(a, b) { return { left: Math.min(a.x, b.x), top: Math.min(a.y, b.y), width: Math.abs(a.x - b.x), height: Math.abs(a.y - b.y) }; }
+cv.onmousedown = e => {
+  const p = pt(e);
+  if (e.altKey) {
+    const bs = cur().boxes;
+    const k = bs.findIndex(b => p.x >= b.left && p.x <= b.left + b.width && p.y >= b.top && p.y <= b.top + b.height);
+    if (k >= 0) bs.splice(k, 1);
+    draw(); return;
+  }
+  start = p;
+};
+cv.onmousemove = e => { if (start) draw(box(start, pt(e))); };
+cv.onmouseup = e => {
+  if (!start) return;
+  const b = box(start, pt(e)); start = null;
+  if (b.width > 0.005 && b.height > 0.005) {
+    for (const k of ['left', 'top', 'width', 'height']) b[k] = +b[k].toFixed(5);
+    cur().boxes.push(b);
+    cur().status = 'butterflies'; show();
+  }
+  draw();
+};
+document.querySelectorAll('input[name=st]').forEach(r => r.onchange = () => {
+  cur().status = r.value;
+  if (r.value !== 'butterflies') cur().boxes = [];
+  draw();
+});
+document.getElementById('load').onclick = () => { S.items = parse(document.getElementById('src').value); S.i = 0; show(); };
+document.getElementById('prev').onclick = () => { if (S.i > 0) { S.i--; show(); } };
+document.getElementById('next').onclick = () => { if (S.i < S.items.length - 1) { S.i++; show(); } };
+document.getElementById('undo').onclick = () => { cur().boxes.pop(); draw(); };
+document.onkeydown = e => {
+  if (e.target.tagName === 'TEXTAREA') return;
+  if (e.key === 'ArrowRight') document.getElementById('next').click();
+  if (e.key === 'ArrowLeft') document.getElementById('prev').click();
+  if (e.key === 'Backspace') { e.preventDefault(); document.getElementById('undo').click(); }
+};
+document.getElementById('export').onclick = () => {
+  const rows = S.items.filter(x => x.status && x.status !== 'skip')
+    .map(x => [x.photo_id, x.image, x.status, '"' + JSON.stringify(x.boxes).replace(/"/g, '""') + '"'].join(','));
+  const blob = new Blob(['photo_id,image,status,boxes\n' + rows.join('\n') + '\n'], { type: 'text/csv' });
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'exam_reference.csv'; a.click();
+};
+</script>
+</body>
+</html>

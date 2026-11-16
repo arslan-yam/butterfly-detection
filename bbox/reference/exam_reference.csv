@@ -1,0 +1,13 @@
+photo_id,image,status,boxes,key,case
+200797972,https://inaturalist-open-data.s3.amazonaws.com/photos/200797972/original.jpeg,butterflies,"[{""left"": 0.103, ""top"": 0.252, ""width"": 0.782, ""height"": 0.466}]",bfly31,крупная дневная бабочка
+760169518,https://inaturalist-open-data.s3.amazonaws.com/photos/760169518/original.jpg,no_butterflies,[],caddis14,ручейник (похож на моль)
+705059232,https://inaturalist-open-data.s3.amazonaws.com/photos/705059232/original.jpg,butterflies,"[{""left"": 0.725, ""top"": 0.2, ""width"": 0.272, ""height"": 0.345}, {""left"": 0.015, ""top"": 0.495, ""width"": 0.32, ""height"": 0.315}, {""left"": 0.347, ""top"": 0.575, ""width"": 0.338, ""height"": 0.32}]",puddle11,несколько бабочек (3)
+296047853,https://inaturalist-open-data.s3.amazonaws.com/photos/296047853/original.jpeg,no_butterflies,[],flower12,цветок без бабочек
+740802553,https://inaturalist-open-data.s3.amazonaws.com/photos/740802553/original.jpg,butterflies,"[{""left"": 0.007, ""top"": 0.0, ""width"": 0.706, ""height"": 0.605}, {""left"": 0.02, ""top"": 0.555, ""width"": 0.83, ""height"": 0.44}]",mating4,перекрытие (2 бабочки)
+758722326,https://inaturalist-open-data.s3.amazonaws.com/photos/758722326/original.jpg,butterflies,"[{""left"": 0.103, ""top"": 0.038, ""width"": 0.787, ""height"": 0.91}]",moth26,"ночная бабочка, невзрачная"
+123418501,https://inaturalist-open-data.s3.amazonaws.com/photos/123418501/original.jpg,no_butterflies,[],larva5,гусеница
+8975522,https://inaturalist-open-data.s3.amazonaws.com/photos/8975522/original.jpeg,butterflies,"[{""left"": 0.454, ""top"": 0.364, ""width"": 0.224, ""height"": 0.285}]",bfly11,мелкая бабочка на сложном фоне
+720383621,https://inaturalist-open-data.s3.amazonaws.com/photos/720383621/original.jpg,butterflies,"[{""left"": 0.048, ""top"": 0.0, ""width"": 0.952, ""height"": 0.961}]",mating11,бабочка обрезана краями кадра
+758908786,https://inaturalist-open-data.s3.amazonaws.com/photos/758908786/original.jpg,no_butterflies,[],caddis23,ручейник в траве
+446726674,https://inaturalist-open-data.s3.amazonaws.com/photos/446726674/original.jpg,butterflies,"[{""left"": 0.18, ""top"": 0.128, ""width"": 0.524, ""height"": 0.757}]",moth34,ночная бабочка на папоротнике
+573415392,https://inaturalist-open-data.s3.amazonaws.com/photos/573415392/original.jpg,no_butterflies,[],flywasp11,муха-журчалка на цветке
