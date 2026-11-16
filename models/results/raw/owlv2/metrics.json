@@ -1,0 +1,112 @@
+{
+  "name": "owlv2_butterfly_moth",
+  "model_id": "google/owlv2-base-patch16-ensemble",
+  "resolved_revision": "cfd3195ba4ea9592eec887ded089f4c08eff231d",
+  "annotation_stage": "raw",
+  "photos": 400,
+  "technical_errors": 0,
+  "eligible_for_selection": false,
+  "dataset_fingerprint": "1be5be28633e98a8b21d85e3b287aaaccc7e5343578ee997d38d821085c4db64",
+  "predictions_sha256": "857fe68c79678f7999d54e75a426fb885081c2eebe87028620167123e98a7041",
+  "iou_0_5": {
+    "tp": 254,
+    "fp": 516,
+    "fn": 19,
+    "precision": 0.32987012987012987,
+    "recall": 0.9304029304029304,
+    "f1": 0.48705656759348037
+  },
+  "iou_0_75": {
+    "tp": 168,
+    "fp": 602,
+    "fn": 105,
+    "precision": 0.21818181818181817,
+    "recall": 0.6153846153846154,
+    "f1": 0.3221476510067114
+  },
+  "negative_photos": 134,
+  "negative_fp_boxes": 177,
+  "negative_photos_with_fp": 106,
+  "total_seconds": 243.8073852842208,
+  "mean_seconds": 0.609518463210552,
+  "images_with_errors_iou_0_5": 247,
+  "groups": {
+    "multiple": {
+      "photos": 6,
+      "iou_0_5": {
+        "tp": 9,
+        "fp": 8,
+        "fn": 4,
+        "precision": 0.5294117647058824,
+        "recall": 0.6923076923076923,
+        "f1": 0.6
+      },
+      "iou_0_75": {
+        "tp": 3,
+        "fp": 14,
+        "fn": 10,
+        "precision": 0.17647058823529413,
+        "recall": 0.23076923076923078,
+        "f1": 0.2
+      }
+    },
+    "negative": {
+      "photos": 134,
+      "iou_0_5": {
+        "tp": 0,
+        "fp": 177,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "iou_0_75": {
+        "tp": 0,
+        "fp": 177,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    "positive": {
+      "photos": 266,
+      "iou_0_5": {
+        "tp": 254,
+        "fp": 339,
+        "fn": 19,
+        "precision": 0.42833052276559863,
+        "recall": 0.9304029304029304,
+        "f1": 0.5866050808314087
+      },
+      "iou_0_75": {
+        "tp": 168,
+        "fp": 425,
+        "fn": 105,
+        "precision": 0.28330522765598654,
+        "recall": 0.6153846153846154,
+        "f1": 0.38799076212471134
+      }
+    },
+    "single": {
+      "photos": 260,
+      "iou_0_5": {
+        "tp": 245,
+        "fp": 331,
+        "fn": 15,
+        "precision": 0.4253472222222222,
+        "recall": 0.9423076923076923,
+        "f1": 0.5861244019138756
+      },
+      "iou_0_75": {
+        "tp": 165,
+        "fp": 411,
+        "fn": 95,
+        "precision": 0.2864583333333333,
+        "recall": 0.6346153846153846,
+        "f1": 0.39473684210526316
+      }
+    }
+  },
+  "timing_note": "Decode + preprocessing + forward/generate + postprocessing + device sync; excludes weights and downloads; first image is cold, no warmup. Resumed successes retain original time."
+}

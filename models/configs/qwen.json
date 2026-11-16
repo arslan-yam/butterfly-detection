@@ -1,0 +1,14 @@
+{
+  "name": "qwen3_vl_2b",
+  "backend": "qwen",
+  "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+  "revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+  "prompt": "Find every adult butterfly and adult moth in this image. Include day and night butterflies. Exclude caterpillars, pupae, other insects, shadows and depictions. Give each individual a separate tight box around all visible wings, body, antennae and legs. For occluded or cropped animals box only visible parts. Return ONLY a JSON list, one object per animal: [{\"bbox_format\":\"xyxy\",\"box\":[x_min,y_min,x_max,y_max]}]. Coordinates must be relative to the full image, normalized to the range 0 to 1000 on each axis. Return [] if no adult butterflies or moths are visible. Do not include explanations or markdown.",
+  "min_pixels": 65536,
+  "max_pixels": 1048576,
+  "max_new_tokens": 2048,
+  "load_in_4bit": false,
+  "nms_iou": 0.5,
+  "seed": 42,
+  "hypothesis": "Instruction-following VLM may distinguish other insects but produce less precise boxes."
+}

@@ -1,0 +1,13 @@
+{
+  "status": "provisional",
+  "best": null,
+  "reason": "Need error-free full golden-set runs of all three required models",
+  "ranking": [
+    "qwen3_vl_2b",
+    "dino_butterfly_moth_threshold035",
+    "dino_butterfly_moth",
+    "owlv2_butterfly_moth_threshold020",
+    "owlv2_butterfly_moth"
+  ],
+  "dataset_fingerprint": "1be5be28633e98a8b21d85e3b287aaaccc7e5343578ee997d38d821085c4db64"
+}

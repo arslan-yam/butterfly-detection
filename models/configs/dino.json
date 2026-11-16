@@ -1,0 +1,12 @@
+{
+  "name": "dino_butterfly_moth",
+  "backend": "dino",
+  "model_id": "IDEA-Research/grounding-dino-tiny",
+  "revision": "a2bb814dd30d776dcf7e30523b00659f4f141c71",
+  "prompt": "butterfly. moth.",
+  "threshold": 0.25,
+  "text_threshold": 0.25,
+  "nms_iou": 0.5,
+  "seed": 42,
+  "hypothesis": "Baseline: detect adult butterflies and moths with confidence threshold 0.25."
+}

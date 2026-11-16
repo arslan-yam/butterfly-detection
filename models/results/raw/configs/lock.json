@@ -1,0 +1,10 @@
+{
+  "source_digest": "05fb19d516f466bf1ce156e4ebb6f961fc36725b3639a0822f3bf6a806b64586",
+  "files": {
+    "dino.json": "261018d9d7511706213c6571bbdcd6534874d4fe1b59afb4edfdbf8f4a235de8",
+    "dino_threshold035.json": "36c50577683ff2e2d187243ee8fb5269635321eaf26b26bebc7ba1aebd2ac2f6",
+    "owlv2.json": "43a9746eba8fc37c813f8c46ccd1f41775bcb480d3d448a5a1c3a967a20ce95d",
+    "owlv2_threshold020.json": "82d6c172c787dcca540b8e437737b1dca05fde4b0d50ad0d68fd32b3d334bdd6",
+    "qwen.json": "0c4d045ca393de53134c02a2435aa52965bcb57a5bc300c0b918daa68566b220"
+  }
+}

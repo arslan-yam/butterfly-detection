@@ -1,0 +1,12 @@
+# Linux amd64 / Python 3.11; overlay for the digest-pinned Docker base.
+# Inherited dependencies are fixed by FROM; install with --no-deps --require-hashes.
+# Generated from pip --dry-run --report, not an independent virtualenv lock.
+accelerate==1.11.0 --hash=sha256:a628fa6beb069b8e549460fc449135d5bd8d73e7a11fd09f0bc9fc4ace7f06f1
+hf-xet==1.8.0 --hash=sha256:29dab7c904cd1914a0439c6e1306c12c7497c8bd32290fbe563ebf51ca4b6d6d
+huggingface-hub==0.36.0 --hash=sha256:7bcc9ad17d5b3f07b57c78e79d527102d08313caa278a641993acddcb894548d
+pillow==11.3.0 --hash=sha256:106064daa23a745510dabce1d84f29137a37224831d88eb4ce94bb187b1d7e5f
+regex==2026.11.15 --hash=sha256:aafeb64c8569d69edfbf772feba49d2a001d3dca0f43e6a71e3735587ecb8222
+safetensors==0.6.2 --hash=sha256:8045db2c872db8f4cbe3faa0495932d89c38c899c603f21e9b6486951a5ecb8f
+scipy==1.14.1 --hash=sha256:fef8c87f8abfb884dac04e97824b61299880c43f4ce675dd2cbeadd3c9b466d2
+tokenizers==0.22.2 --hash=sha256:369cc9fc8cc10cb24143873a0d95438bb8ee257bb80c71989e3ee290e8d72c67
+transformers==4.57.1 --hash=sha256:b10d05da8fa67dc41644dbbf9bc45a44cb86ae33da6f9295f5fbf5b7890bd267

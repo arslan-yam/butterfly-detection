@@ -1,0 +1,15 @@
+**
+!Dockerfile
+!README.md
+!models/
+!models/**
+models/data/
+models/cache/
+models/runs/
+models/results/
+models/artifacts/
+models/submissions/
+models/__pycache__/
+models/**/__pycache__/
+models/docker/verification.json
+models/docker/resolution.json

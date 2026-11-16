@@ -1,0 +1,19 @@
+{
+  "stage": "raw",
+  "photos": 400,
+  "boxes": 273,
+  "negative_photos": 134,
+  "sources": [
+    {
+      "path": "/inputs/main/bbox_raw.jsonl",
+      "sha256": "86fc4d3d026699ed570630411f52fbe70eb26e0a065033fef5527f05a42868b2"
+    },
+    {
+      "path": "/inputs/pilot/bbox_raw.jsonl",
+      "sha256": "bb2961c87ae14844bc1e2fefc12831d10004aaddb8fc216752e09b5140e9c1c6"
+    }
+  ],
+  "manifest_sha256": "1a4b216962673bff8b0c40ddd4a81faa5a2b815f1d63f551a012960c2f06cdb1",
+  "annotations_sha256": "08f920b3e0161b2e9b46daf59ba13ed7ca76d0355ee04c98968d099ba1f324e9",
+  "note": "Raw bbox before independent review; not a golden set"
+}

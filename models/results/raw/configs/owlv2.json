@@ -1,0 +1,14 @@
+{
+  "name": "owlv2_butterfly_moth",
+  "backend": "owlv2",
+  "model_id": "google/owlv2-base-patch16-ensemble",
+  "revision": "cfd3195ba4ea9592eec887ded089f4c08eff231d",
+  "queries": [
+    "a butterfly",
+    "a moth"
+  ],
+  "threshold": 0.1,
+  "nms_iou": 0.5,
+  "seed": 42,
+  "hypothesis": "Independent open-vocabulary detector for adult butterflies and moths."
+}

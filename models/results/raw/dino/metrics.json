@@ -1,0 +1,112 @@
+{
+  "name": "dino_butterfly_moth",
+  "model_id": "IDEA-Research/grounding-dino-tiny",
+  "resolved_revision": "a2bb814dd30d776dcf7e30523b00659f4f141c71",
+  "annotation_stage": "raw",
+  "photos": 400,
+  "technical_errors": 0,
+  "eligible_for_selection": false,
+  "dataset_fingerprint": "1be5be28633e98a8b21d85e3b287aaaccc7e5343578ee997d38d821085c4db64",
+  "predictions_sha256": "4d2caf3af2c9206d6acafd8d974ba4c432473690b2c6be567d2b154c3de794e4",
+  "iou_0_5": {
+    "tp": 268,
+    "fp": 240,
+    "fn": 5,
+    "precision": 0.5275590551181102,
+    "recall": 0.9816849816849816,
+    "f1": 0.6862996158770807
+  },
+  "iou_0_75": {
+    "tp": 229,
+    "fp": 279,
+    "fn": 44,
+    "precision": 0.4507874015748031,
+    "recall": 0.8388278388278388,
+    "f1": 0.586427656850192
+  },
+  "negative_photos": 134,
+  "negative_fp_boxes": 207,
+  "negative_photos_with_fp": 132,
+  "total_seconds": 90.01829725527205,
+  "mean_seconds": 0.22504574313818013,
+  "images_with_errors_iou_0_5": 161,
+  "groups": {
+    "multiple": {
+      "photos": 6,
+      "iou_0_5": {
+        "tp": 9,
+        "fp": 1,
+        "fn": 4,
+        "precision": 0.9,
+        "recall": 0.6923076923076923,
+        "f1": 0.782608695652174
+      },
+      "iou_0_75": {
+        "tp": 4,
+        "fp": 6,
+        "fn": 9,
+        "precision": 0.4,
+        "recall": 0.3076923076923077,
+        "f1": 0.34782608695652173
+      }
+    },
+    "negative": {
+      "photos": 134,
+      "iou_0_5": {
+        "tp": 0,
+        "fp": 207,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "iou_0_75": {
+        "tp": 0,
+        "fp": 207,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    "positive": {
+      "photos": 266,
+      "iou_0_5": {
+        "tp": 268,
+        "fp": 33,
+        "fn": 5,
+        "precision": 0.8903654485049833,
+        "recall": 0.9816849816849816,
+        "f1": 0.9337979094076655
+      },
+      "iou_0_75": {
+        "tp": 229,
+        "fp": 72,
+        "fn": 44,
+        "precision": 0.760797342192691,
+        "recall": 0.8388278388278388,
+        "f1": 0.7979094076655052
+      }
+    },
+    "single": {
+      "photos": 260,
+      "iou_0_5": {
+        "tp": 259,
+        "fp": 32,
+        "fn": 1,
+        "precision": 0.8900343642611683,
+        "recall": 0.9961538461538462,
+        "f1": 0.9401088929219601
+      },
+      "iou_0_75": {
+        "tp": 225,
+        "fp": 66,
+        "fn": 35,
+        "precision": 0.7731958762886598,
+        "recall": 0.8653846153846154,
+        "f1": 0.8166969147005445
+      }
+    }
+  },
+  "timing_note": "Decode + preprocessing + forward/generate + postprocessing + device sync; excludes weights and downloads; first image is cold, no warmup. Resumed successes retain original time."
+}

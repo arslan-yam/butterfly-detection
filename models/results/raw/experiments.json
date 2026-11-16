@@ -1,0 +1,135 @@
+{
+  "factor": "confidence threshold",
+  "nms_iou_fixed": 0.5,
+  "models": {
+    "dino": {
+      "factor": "confidence threshold",
+      "baseline": "dino",
+      "variant": "dino_threshold035",
+      "target": "All adult butterflies and moths; identical target definition for all three models",
+      "hypothesis": "Higher confidence threshold should reduce false positives and improve precision, with a possible recall decrease.",
+      "annotation_stage": "raw",
+      "photos": 400,
+      "changed_model_settings": [
+        "threshold"
+      ],
+      "baseline_threshold": 0.25,
+      "variant_threshold": 0.35,
+      "fixed_settings": {
+        "model_id": "IDEA-Research/grounding-dino-tiny",
+        "revision": "a2bb814dd30d776dcf7e30523b00659f4f141c71",
+        "prompt": "butterfly. moth.",
+        "text_threshold": 0.25,
+        "nms_iou": 0.5,
+        "seed": 42
+      },
+      "same_image_bytes": true,
+      "same_container": true,
+      "all_400_threshold_filter_checks_passed": true,
+      "hypothesis_recorded_before_new_runs": true,
+      "baseline_metrics": {
+        "tp": 268,
+        "fp": 240,
+        "fn": 5,
+        "precision": 0.5275590551181102,
+        "recall": 0.9816849816849816,
+        "f1": 0.6862996158770807
+      },
+      "variant_metrics": {
+        "tp": 257,
+        "fp": 145,
+        "fn": 16,
+        "precision": 0.6393034825870647,
+        "recall": 0.9413919413919414,
+        "f1": 0.7614814814814815
+      },
+      "metric_deltas": {
+        "tp": -11,
+        "fp": -95,
+        "fn": 11,
+        "precision": 0.11174442746895452,
+        "recall": -0.04029304029304026,
+        "f1": 0.07518186560440088
+      },
+      "plan": {
+        "planned_at_utc": "2026-11-16T21:50:54.077867+00:00",
+        "factor": "Grounding DINO confidence threshold",
+        "baseline": 0.25,
+        "variant": 0.35,
+        "prompt": "butterfly. moth.",
+        "text_threshold": 0.25,
+        "nms_iou": 0.5,
+        "hypothesis": "Higher confidence threshold should reduce false positives and improve precision, with a possible recall decrease.",
+        "baseline_config": "models/configs/dino.json",
+        "variant_config": "models/configs/dino_threshold035.json",
+        "manifest_sha256": "1a4b216962673bff8b0c40ddd4a81faa5a2b815f1d63f551a012960c2f06cdb1",
+        "annotations_sha256": "08f920b3e0161b2e9b46daf59ba13ed7ca76d0355ee04c98968d099ba1f324e9",
+        "note": "Threshold fixed before the new runs; evaluated on all 400 photos with raw annotations."
+      }
+    },
+    "owlv2": {
+      "factor": "confidence threshold",
+      "baseline": "owlv2",
+      "variant": "owlv2_threshold020",
+      "photos": 400,
+      "annotation_stage": "raw",
+      "hypothesis": "Reduce false positives and improve precision at a possible recall cost; queries, weights and NMS are unchanged.",
+      "baseline_threshold": 0.1,
+      "variant_threshold": 0.2,
+      "changed_model_settings": [
+        "threshold"
+      ],
+      "fixed_settings": {
+        "model_id": "google/owlv2-base-patch16-ensemble",
+        "revision": "cfd3195ba4ea9592eec887ded089f4c08eff231d",
+        "queries": [
+          "a butterfly",
+          "a moth"
+        ],
+        "nms_iou": 0.5,
+        "seed": 42
+      },
+      "same_image_bytes": true,
+      "same_container": true,
+      "all_400_threshold_filter_checks_passed": true,
+      "hypothesis_recorded_before_variant_run": true,
+      "baseline_metrics": {
+        "tp": 254,
+        "fp": 516,
+        "fn": 19,
+        "precision": 0.32987012987012987,
+        "recall": 0.9304029304029304,
+        "f1": 0.48705656759348037
+      },
+      "variant_metrics": {
+        "tp": 246,
+        "fp": 202,
+        "fn": 27,
+        "precision": 0.5491071428571429,
+        "recall": 0.9010989010989011,
+        "f1": 0.6823855755894591
+      },
+      "metric_deltas": {
+        "tp": -8,
+        "fp": -314,
+        "fn": 8,
+        "precision": 0.21923701298701304,
+        "recall": -0.02930402930402931,
+        "f1": 0.19532900799597874
+      },
+      "plan": {
+        "planned_at_utc": "2026-11-16T22:00:17.523322+00:00",
+        "factor": "OWLv2 confidence threshold",
+        "baseline": 0.1,
+        "variant": 0.2,
+        "hypothesis": "Reduce false positives and improve precision at a possible recall cost; queries, weights and NMS are unchanged.",
+        "manifest_sha256": "1a4b216962673bff8b0c40ddd4a81faa5a2b815f1d63f551a012960c2f06cdb1",
+        "annotations_sha256": "08f920b3e0161b2e9b46daf59ba13ed7ca76d0355ee04c98968d099ba1f324e9",
+        "annotation_stage": "raw"
+      }
+    }
+  },
+  "not_applicable": {
+    "qwen": "This generative backend returns coordinates without comparable detection confidence scores."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "owlv2_butterfly_moth_threshold020",
+  "backend": "owlv2",
+  "model_id": "google/owlv2-base-patch16-ensemble",
+  "revision": "cfd3195ba4ea9592eec887ded089f4c08eff231d",
+  "queries": [
+    "a butterfly",
+    "a moth"
+  ],
+  "threshold": 0.2,
+  "nms_iou": 0.5,
+  "seed": 42,
+  "hypothesis": "Raising only the confidence threshold from 0.10 to 0.20 should reduce false positives and improve precision, with a possible recall decrease."
+}

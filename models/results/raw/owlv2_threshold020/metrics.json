@@ -1,0 +1,112 @@
+{
+  "name": "owlv2_butterfly_moth_threshold020",
+  "model_id": "google/owlv2-base-patch16-ensemble",
+  "resolved_revision": "cfd3195ba4ea9592eec887ded089f4c08eff231d",
+  "annotation_stage": "raw",
+  "photos": 400,
+  "technical_errors": 0,
+  "eligible_for_selection": false,
+  "dataset_fingerprint": "1be5be28633e98a8b21d85e3b287aaaccc7e5343578ee997d38d821085c4db64",
+  "predictions_sha256": "32827acecf6e47346e79feab18bd4f330a253b5cfec11bdb15368b6a7fdfd7da",
+  "iou_0_5": {
+    "tp": 246,
+    "fp": 202,
+    "fn": 27,
+    "precision": 0.5491071428571429,
+    "recall": 0.9010989010989011,
+    "f1": 0.6823855755894591
+  },
+  "iou_0_75": {
+    "tp": 163,
+    "fp": 285,
+    "fn": 110,
+    "precision": 0.3638392857142857,
+    "recall": 0.5970695970695971,
+    "f1": 0.4521497919556172
+  },
+  "negative_photos": 134,
+  "negative_fp_boxes": 104,
+  "negative_photos_with_fp": 84,
+  "total_seconds": 197.93244533217512,
+  "mean_seconds": 0.4948311133304378,
+  "images_with_errors_iou_0_5": 158,
+  "groups": {
+    "multiple": {
+      "photos": 6,
+      "iou_0_5": {
+        "tp": 6,
+        "fp": 5,
+        "fn": 7,
+        "precision": 0.5454545454545454,
+        "recall": 0.46153846153846156,
+        "f1": 0.5
+      },
+      "iou_0_75": {
+        "tp": 1,
+        "fp": 10,
+        "fn": 12,
+        "precision": 0.09090909090909091,
+        "recall": 0.07692307692307693,
+        "f1": 0.08333333333333333
+      }
+    },
+    "negative": {
+      "photos": 134,
+      "iou_0_5": {
+        "tp": 0,
+        "fp": 104,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "iou_0_75": {
+        "tp": 0,
+        "fp": 104,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    "positive": {
+      "photos": 266,
+      "iou_0_5": {
+        "tp": 246,
+        "fp": 98,
+        "fn": 27,
+        "precision": 0.7151162790697675,
+        "recall": 0.9010989010989011,
+        "f1": 0.7974068071312804
+      },
+      "iou_0_75": {
+        "tp": 163,
+        "fp": 181,
+        "fn": 110,
+        "precision": 0.4738372093023256,
+        "recall": 0.5970695970695971,
+        "f1": 0.5283630470016207
+      }
+    },
+    "single": {
+      "photos": 260,
+      "iou_0_5": {
+        "tp": 240,
+        "fp": 93,
+        "fn": 20,
+        "precision": 0.7207207207207207,
+        "recall": 0.9230769230769231,
+        "f1": 0.8094435075885329
+      },
+      "iou_0_75": {
+        "tp": 162,
+        "fp": 171,
+        "fn": 98,
+        "precision": 0.4864864864864865,
+        "recall": 0.6230769230769231,
+        "f1": 0.5463743676222597
+      }
+    }
+  },
+  "timing_note": "Decode + preprocessing + forward/generate + postprocessing + device sync; excludes weights and downloads; first image is cold, no warmup. Resumed successes retain original time."
+}
