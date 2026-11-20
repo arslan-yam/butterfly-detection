@@ -1,0 +1,11 @@
+{
+  "reference_manifest_sha256": "1a4b216962673bff8b0c40ddd4a81faa5a2b815f1d63f551a012960c2f06cdb1",
+  "predictions": {
+    "dino": "4d2caf3af2c9206d6acafd8d974ba4c432473690b2c6be567d2b154c3de794e4",
+    "dino_threshold035": "1deb36fa0f4d1aacdd922be37f33a655f121afdac0a0c15be0130763f70ca2a1",
+    "owlv2": "857fe68c79678f7999d54e75a426fb885081c2eebe87028620167123e98a7041",
+    "owlv2_threshold020": "32827acecf6e47346e79feab18bd4f330a253b5cfec11bdb15368b6a7fdfd7da",
+    "qwen": "ffd868c30dbc817d3f5956f93eac3e1dec1074a997834464e4c875c64bca6ce5"
+  },
+  "annotations_sha256": "4559d6509834966aca741a8bb6bade702cb860fe34f311689f61ed35f256586c"
+}

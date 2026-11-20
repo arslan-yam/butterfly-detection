@@ -1,0 +1,13 @@
+{
+  "status": "ready",
+  "best": "qwen3_vl_2b",
+  "reason": "Highest F1@0.5; tie: lowest mean latency",
+  "ranking": [
+    "qwen3_vl_2b",
+    "dino_butterfly_moth_threshold035",
+    "dino_butterfly_moth",
+    "owlv2_butterfly_moth_threshold020",
+    "owlv2_butterfly_moth"
+  ],
+  "dataset_fingerprint": "41d6ffc4cb68eb995cb2fd532ef988f1afd188c0d8d243daccf2e872777f4e50"
+}

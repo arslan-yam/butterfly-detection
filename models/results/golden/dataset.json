@@ -1,0 +1,15 @@
+{
+  "stage": "golden",
+  "photos": 400,
+  "boxes": 299,
+  "negative_photos": 110,
+  "sources": [
+    {
+      "path": "bbox/final.jsonl",
+      "sha256": "4970a1493846d6c10ef7e8c972fca46c25166b1eb0df88a8d03ec07ca95e46e1"
+    }
+  ],
+  "manifest_sha256": "1a4b216962673bff8b0c40ddd4a81faa5a2b815f1d63f551a012960c2f06cdb1",
+  "annotations_sha256": "4559d6509834966aca741a8bb6bade702cb860fe34f311689f61ed35f256586c",
+  "note": ""
+}
